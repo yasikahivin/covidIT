@@ -1,8 +1,4 @@
-/*
-  # Face tracking using arduino - Code #
-  # Code by Harsh Dethe
-  # 09 Sep 2018.
-*/
+
 
 #include<Servo.h>
 
@@ -61,4 +57,3 @@ void loop()
   }
 }
   
-
