@@ -27,6 +27,8 @@ int servo5state;
 // servo 4 11 10-170    300-500
 // servo 5 12 40-140    500-600
 
+const int pingPin = 4; // Trigger Pin of Ultrasonic Sensor
+const int echoPin = 5; // Echo Pin of Ultrasonic Sensor
 
 #define echoPin 2 // attach pin D2 Arduino to pin Echo of HC-SR04
 #define trigPin 3 //attach pin D3 Arduino to pin Trig of HC-SR04
