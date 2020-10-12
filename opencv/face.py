@@ -1,11 +1,13 @@
 
 import numpy as np
-import serial
+#import serial
+from serial import Serial
 import time
 import sys
 import cv2
+import serial
 
-arduino = serial.Serial('COM5', 9600)
+arduino = serial.Serial('COM4', 9600)
 time.sleep(2)
 print("Connection to arduino...")
 
@@ -45,7 +47,7 @@ while 1:
         center = (xx,yy)
 
         print("Center of Rectangle is :", center)
-        data = "X{0:d}Y{1:d}Z".format(xx, yy)
+        data = "X{0:f}Y{1:f}Z".format(xx, yy)
         print ("output = '" +data+ "'")
         arduino.write(data)
     
