@@ -49,7 +49,7 @@ while 1:
         print("Center of Rectangle is :", center)
         data = "X{0:f}Y{1:f}Z".format(xx, yy)
         print ("output = '" +data+ "'")
-        arduino.write(data)
+        #arduino.write(data)
     
 
     cv2.imshow('img',img)
