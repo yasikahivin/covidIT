@@ -7,6 +7,7 @@ import sys
 import cv2
 import serial
 
+#Setup Communication path for arduino
 arduino = serial.Serial('COM4', 9600)
 time.sleep(2)
 print("Connection to arduino...")
@@ -16,6 +17,7 @@ face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 cap = cv2.VideoCapture(0)
 
+#Read the image, convert it to Gray image and find faces
 while 1:
     ret, img = cap.read()
     cv2.resizeWindow('img', 500,500)
@@ -46,14 +48,19 @@ while 1:
 
         center = (xx,yy)
 
+        xxx=int(xx)
+        yyy=int(yy)
+
+        # sending data to arduino
         print("Center of Rectangle is :", center)
-        data = "X{0:f}Y{1:f}Z".format(xx, yy)
+        data = "X{0:d}Y{1:d}Z".format(xxx, yyy)
         print ("output = '" +data+ "'")
         #arduino.write(data)
     
 
-    cv2.imshow('img',img)
+    cv2.imshow('CovidIT',img)
    
+   # Esc to terminate
     k = cv2.waitKey(30) & 0xff
     if k == 27:
         break
